@@ -1,51 +1,253 @@
+@import drop-style
 
-*::before,
-*::after
-  box-sizing: border-box
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
 
-ul[class],
-ol[class]
-  padding: 0
+//scrollbar styles//
 
-body, h1, h2, h3, h4, p, ul[class], ol[class],
-li, figure, figcaption, blockquote, dl, dd
-  margin: 0
+::-webkit-scrollbar
+  width: 8px
+  z-index: 1000
+  &:hover
+    width: 12px
 
+body:hover ::-webkit-scrollbar
+  width: 8px
 
-body
-  min-height: 100vh
-  scroll-behavior: smooth
-  text-rendering: optimizeSpeed
-  line-height: 1.5
+::-webkit-scrollbar-track
+  border-radius: 10px
 
+::-webkit-scrollbar-thumb
+  background: #A1A1A1
+  border-radius: 10px
+  &:hover
+    background-color: #E40000
 
-ul[class],
-ol[class]
-  list-style: none
-
-
-a:not([class])
-  text-decoration-skip-ink: auto
-
-img
-  max-width: 100%
-  display: block
-
-article > * + *
-  margin-top: 1em
-
-
-input, button,
-textarea, select
-  font: inherit
-
-
-@media (prefers-reduced-motion: reduce)
-  *
-    animation-duration: 0.01ms !important
-    animation-iteration-count: 1 !important
-    transition-duration: 0.01ms !important
-    scroll-behavior: auto !important
+//base styles//
 
 body
-  background-color: yellow
+  display: flex
+  flex-direction: column
+
+
+main
+  padding-top: 80px
+  flex: 1 1 100%
+
+header
+  width: 100%
+  background-color: #E40000
+  height: 80px
+  display: none
+  justify-content: center
+  position: fixed
+
+  &.slow-move
+    transition-duration: 1s
+    transition-timing-function: ease
+
+  #main-navigation
+    width: 60%
+    ul
+      list-style: none
+      color: #FFF
+      font: 30px "Yu Gothic UI Semibold"
+      display: flex
+      justify-content: space-between
+      padding: 0
+      margin: 0
+
+      li
+        display: inline
+        text-transform: uppercase
+        text-align: center
+        padding: 20px
+        min-width: 180px
+        max-height: 70px
+
+        &:not(#return):hover
+          background-color: #BF0000
+
+      #return
+        display: none
+
+        span
+          text-align: left
+          font: 30px "Yu Gothic UI Semibold"
+          height: 40px
+          padding-bottom: 20px
+
+        img
+          width: 24px
+          height: 24px
+          display: inline-block
+
+footer
+  text-align: center
+  background-color: #E40000
+  color: #FFF
+  font: 14px 'Montserrat', sans-serif
+  padding: 15px
+  display: none
+
+.about, .contacts
+  display: none
+
+//joke section
+
+.joke
+  h1
+    width: 30vw
+    text-align: center
+
+  .pretty-header
+    font-size: 60px
+    font-family: 'Big Shoulders Stencil Text', cursive
+    color: #6B2020
+    margin: 50px 35vw
+
+  .pretty-form
+    display: flex
+    flex-direction: column
+    width: 30vw
+    margin: 50px 33vw
+    padding: 2vw
+    border: 2px solid #6B2020
+    border-radius: 2px
+    background-color: #FAFAFA
+
+    h2
+      width: 20%
+      margin: 0 40% 50px
+      font-family: 'Montserrat', sans-serif
+      color: #6B2020
+      font-size: 30px
+
+    label
+      display: flex
+      flex-direction: row
+
+      span
+        margin-right: 10px
+        font-size: 20px
+        font-family: 'Montserrat', sans-serif
+        border-left: 4px solid #6B2020
+        padding-left: 5px
+        font-weight: 500
+
+      input
+        display: flex
+        flex: 1 1
+        height: 28px
+
+    button
+      margin: 50px 30% 20px
+      width: 40%
+      height: 60px
+      background-color: #E40000
+      color: #FFF
+      border-color: #6B2020
+      border-style: groove
+      border-radius: 10px
+      font: 25px 'Montserrat', sans-serif
+
+      &:hover
+        cursor: pointer
+
+  .pretty-image
+    width: 30vw
+    height: 30vw
+    object-fit: cover
+    margin: 100px 35vw 10px
+
+  .pretty-text
+    display: block
+    margin: 5px 35vw
+    font: 25px 'Montserrat', sans-serif
+    position: relative
+
+    &:after
+      content: ''
+      display: none
+      position: absolute
+      width: 80px
+      height: 50px
+      background-color: #E40000
+      transform: rotate(-45deg)
+      bottom: 300px
+      left: 101px
+      border-radius: 0 25px 25px 0
+
+    &:before
+      content: ''
+      display: none
+      position: absolute
+      width: 80px
+      height: 50px
+      background-color: #E40000
+      transform: rotate(45deg)
+      bottom: 300px
+      left: 80px
+      border-radius: 25px 0 0 25px
+
+    &.like:before, &.like:after
+      display: block
+
+  .pretty-paragraph
+    width: 24vw
+    margin: 10px 38vw 100px
+    display: flex
+    justify-content: space-between
+
+    button
+      width: 40%
+      font: 20px 'Montserrat', sans-serif
+      color: #6B2020
+      border-color: #6B2020
+
+      &:hover
+        cursor: pointer
+
+  p:last-child
+    margin: 20px auto
+    width: 200px
+
+  .nice-text
+    font: 25px 'Montserrat', sans-serif
+    color: #6B2020
+    padding-bottom: 100px
+    text-align: center
+
+  & *
+    transition-duration: 1.5s
+    transition-timing-function: ease
+
+
+
+//about section//
+
+
+.about_nav
+  width: 250px
+  margin-left: 50px
+  position: fixed
+
+  ul
+    list-style: none
+    border-left: 4px solid red
+    padding-inline-start: 0
+    height: 100px
+
+    li
+      padding: 10px 0 0 20px
+      font-family: 'Roboto', sans-serif
+      font-size: 20px
+      border-left: 4px solid green
+
+
+.about_content
+  margin-left: 300px
+
+
+

@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 *::before,
 *::after {
   box-sizing: border-box;
@@ -51,8 +54,250 @@ textarea, select {
     scroll-behavior: auto !important;
   }
 }
+::-webkit-scrollbar {
+  width: 8px;
+  z-index: 1000;
+}
+::-webkit-scrollbar:hover {
+  width: 12px;
+}
+
+body:hover ::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A1A1A1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #E40000;
+}
+
 body {
-  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding-top: 80px;
+  flex: 1 1 100%;
+}
+
+header {
+  width: 100%;
+  background-color: #E40000;
+  height: 80px;
+  display: none;
+  justify-content: center;
+  position: fixed;
+}
+header.slow-move {
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+header #main-navigation {
+  width: 60%;
+}
+header #main-navigation ul {
+  list-style: none;
+  color: #FFF;
+  font: 30px "Yu Gothic UI Semibold";
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+header #main-navigation ul li {
+  display: inline;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+  min-width: 180px;
+  max-height: 70px;
+}
+header #main-navigation ul li:not(#return):hover {
+  background-color: #BF0000;
+}
+header #main-navigation ul #return {
+  display: none;
+}
+header #main-navigation ul #return span {
+  text-align: left;
+  font: 30px "Yu Gothic UI Semibold";
+  height: 40px;
+  padding-bottom: 20px;
+}
+header #main-navigation ul #return img {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+footer {
+  text-align: center;
+  background-color: #E40000;
+  color: #FFF;
+  font: 14px "Montserrat", sans-serif;
+  padding: 15px;
+  display: none;
+}
+
+.about, .contacts {
+  display: none;
+}
+
+.joke h1 {
+  width: 30vw;
+  text-align: center;
+}
+.joke .pretty-header {
+  font-size: 60px;
+  font-family: "Big Shoulders Stencil Text", cursive;
+  color: #6B2020;
+  margin: 50px 35vw;
+}
+.joke .pretty-form {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin: 50px 33vw;
+  padding: 2vw;
+  border: 2px solid #6B2020;
+  border-radius: 2px;
+  background-color: #FAFAFA;
+}
+.joke .pretty-form h2 {
+  width: 20%;
+  margin: 0 40% 50px;
+  font-family: "Montserrat", sans-serif;
+  color: #6B2020;
+  font-size: 30px;
+}
+.joke .pretty-form label {
+  display: flex;
+  flex-direction: row;
+}
+.joke .pretty-form label span {
+  margin-right: 10px;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  border-left: 4px solid #6B2020;
+  padding-left: 5px;
+  font-weight: 500;
+}
+.joke .pretty-form label input {
+  display: flex;
+  flex: 1 1;
+  height: 28px;
+}
+.joke .pretty-form button {
+  margin: 50px 30% 20px;
+  width: 40%;
+  height: 60px;
+  background-color: #E40000;
+  color: #FFF;
+  border-color: #6B2020;
+  border-style: groove;
+  border-radius: 10px;
+  font: 25px "Montserrat", sans-serif;
+}
+.joke .pretty-form button:hover {
+  cursor: pointer;
+}
+.joke .pretty-image {
+  width: 30vw;
+  height: 30vw;
+  object-fit: cover;
+  margin: 100px 35vw 10px;
+}
+.joke .pretty-text {
+  display: block;
+  margin: 5px 35vw;
+  font: 25px "Montserrat", sans-serif;
+  position: relative;
+}
+.joke .pretty-text:after {
+  content: "";
+  display: none;
+  position: absolute;
+  width: 80px;
+  height: 50px;
+  background-color: #E40000;
+  transform: rotate(-45deg);
+  bottom: 300px;
+  left: 101px;
+  border-radius: 0 25px 25px 0;
+}
+.joke .pretty-text:before {
+  content: "";
+  display: none;
+  position: absolute;
+  width: 80px;
+  height: 50px;
+  background-color: #E40000;
+  transform: rotate(45deg);
+  bottom: 300px;
+  left: 80px;
+  border-radius: 25px 0 0 25px;
+}
+.joke .pretty-text.like:before, .joke .pretty-text.like:after {
+  display: block;
+}
+.joke .pretty-paragraph {
+  width: 24vw;
+  margin: 10px 38vw 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.joke .pretty-paragraph button {
+  width: 40%;
+  font: 20px "Montserrat", sans-serif;
+  color: #6B2020;
+  border-color: #6B2020;
+}
+.joke .pretty-paragraph button:hover {
+  cursor: pointer;
+}
+.joke p:last-child {
+  margin: 20px auto;
+  width: 200px;
+}
+.joke .nice-text {
+  font: 25px "Montserrat", sans-serif;
+  color: #6B2020;
+  padding-bottom: 100px;
+  text-align: center;
+}
+.joke * {
+  transition-duration: 1.5s;
+  transition-timing-function: ease;
+}
+
+.about_nav {
+  width: 250px;
+  margin-left: 50px;
+  position: fixed;
+}
+.about_nav ul {
+  list-style: none;
+  border-left: 4px solid red;
+  padding-inline-start: 0;
+  height: 100px;
+}
+.about_nav ul li {
+  padding: 10px 0 0 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  border-left: 4px solid green;
+}
+
+.about_content {
+  margin-left: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */
