@@ -9,8 +9,6 @@
 ::-webkit-scrollbar
   width: 8px
   z-index: 1000
-  &:hover
-    width: 12px
 
 body:hover ::-webkit-scrollbar
   width: 8px
@@ -42,6 +40,7 @@ header
   display: none
   justify-content: center
   position: fixed
+  z-index: 1001
 
   &.slow-move
     transition-duration: 1s
@@ -232,22 +231,134 @@ footer
   width: 250px
   margin-left: 50px
   position: fixed
+  display: none
 
   ul
     list-style: none
     border-left: 4px solid red
     padding-inline-start: 0
-    height: 100px
+    z-index: 101
+    position: relative
 
     li
-      padding: 10px 0 0 20px
+      padding-left: 20px
       font-family: 'Roboto', sans-serif
       font-size: 20px
-      border-left: 4px solid green
+
+      &:first-child
+        border-left: 4px solid green
+        position: absolute
+        left: -4px
+        height: 0
 
 
 .about_content
   margin-left: 300px
+  padding: 10px 200px 0 10px
+
+  & > section
+    min-height: 500px
+    border: 2px solid #6B2020
+    border-bottom: none
+
+    h1
+      margin-top: 20px
+      margin-bottom: 20px
+      text-align: center
+      color: #6B2020
+      font: 40px 'Roboto', sans-serif
+
+    &:nth-of-type(1) h1
+      margin-top: 20%
+      font-size: 50px
+
+    &:nth-of-type(3)
+      height: 2000px
+
+      h1
+        font: 40px 'Roboto', sans-serif
+        font-weight: 600
+        margin-top: 50px
+        margin-bottom: 20px
+
+      span
+        display: block
+        font: 30px 'Roboto', sans-serif
+        font-weight: 500
+        padding: 50px 40%
+        color: brown
 
 
 
+//slider styles
+
+.wrapper
+  display: flex
+  height: 500px
+  width: 400px
+  overflow: hidden
+  margin: 0 auto
+
+  .slider
+    display: flex
+    //transform: translateX(-800px)
+
+    &.slow
+      transition-duration: 1s
+      transition-timing-function: ease
+
+    .slide
+      width: 400px
+      height: 500px
+      background: url("../icons/loading.gif") center no-repeat
+
+      img
+        width: 400px
+        height: 400px
+
+
+      span
+        font: 40px 'Roboto', sans-serif
+        background-color: #000
+        color: #FFF
+        display: block
+        width: 400px
+        text-align: center
+
+#previous
+  margin-left: calc(50% - 50px)
+  display: none
+  width: 50px
+
+#next
+  margin-left: calc(50% - 25px)
+
+#previous, #next
+  font-size: 50px
+  cursor: pointer
+  user-select: none
+  -ms-user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+
+
+  &:hover
+    color: #E40000
+
+.contacts
+  flex-direction: column
+  height: 90vh
+  padding-left: 30%
+  align-content: center
+  display: none
+
+  a
+    font: 40px "Roboto", sans-serif
+    text-decoration: none
+    color: #6B2020
+    margin-top: 50px
+
+  img
+    width: 30px
+    height: 30px
+    display: inline
