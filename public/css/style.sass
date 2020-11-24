@@ -1,67 +1,123 @@
 @import drop-style
 
+
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@700&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
 
-//scrollbar styles//
+
+=border-radius($value)
+  border-radius: $value
+  -moz-border-radius: $value
+  -webkit-border-radius: $value
+
+%d-flex
+  display: flex
+  display: -o-flex
+  display: -ms-flex
+  display: -moz-flex
+  display: -webkit-flex
+
+=flex-direction($value)
+  flex-direction: $value
+  -ms-flex-direction: $value
+  -webkit-flex-direction: $value
+
+=flex($value)
+  flex: 1 1 $value
+  -ms-flex: 1 1 $value
+  -webkit-flex: 1 1 $value
+
+=justify-content($value)
+  justify-content: $value
+  -webkit-justify-content: $value
+
+=transition($duration, $function)
+  transition-duration: $duration
+  -o-transition-duration: $duration
+  -moz-transition-duration: $duration
+  -webkit-transition-duration: $duration
+  transition-timing-function: $function
+  -o-transition-timing-function: $function
+  -moz-transition-timing-function: $function
+  -webkit-transition-timing-function: $function
+
+%text-align-center
+  text-align: center
+  text-align: -moz-center
+  text-align: -webkit-center
+
+%text-align-left
+  text-align: left
+  text-align: -moz-left
+  text-align: -webkit-left
+
+=object-fit($value)
+  object-fit: $value
+  -o-object-fit: $value
+
+=transform($value)
+  transform: $value
+  -o-transform: $value
+  -ms-transform: $value
+  -moz-transform: $value
+  -webkit-transform: $value
 
 ::-webkit-scrollbar
   width: 8px
   z-index: 1000
-  &:hover
-    width: 12px
 
 body:hover ::-webkit-scrollbar
   width: 8px
 
 ::-webkit-scrollbar-track
-  border-radius: 10px
+  +border-radius(10px)
 
 ::-webkit-scrollbar-thumb
   background: #A1A1A1
-  border-radius: 10px
+  +border-radius(10px)
   &:hover
     background-color: #E40000
 
-//base styles//
 
 body
-  display: flex
-  flex-direction: column
+  @extend %d-flex
+  +flex-direction(column)
 
 
 main
   padding-top: 80px
-  flex: 1 1 100%
+  +flex(100%)
 
 header
   width: 100%
   background-color: #E40000
   height: 80px
   display: none
-  justify-content: center
+  +justify-content(center)
   position: fixed
+  z-index: 1001
+
+  &.small
+    width: 300px
 
   &.slow-move
-    transition-duration: 1s
-    transition-timing-function: ease
+    +transition(1s, ease)
 
   #main-navigation
-    width: 60%
     ul
       list-style: none
       color: #FFF
       font: 30px "Yu Gothic UI Semibold"
-      display: flex
-      justify-content: space-between
+      @extend %d-flex
+      +justify-content(space-between)
       padding: 0
       margin: 0
 
       li
         display: inline
         text-transform: uppercase
-        text-align: center
+        @extend %text-align-center
         padding: 20px
         min-width: 180px
         max-height: 70px
@@ -73,7 +129,7 @@ header
         display: none
 
         span
-          text-align: left
+          @extend %text-align-left
           font: 30px "Yu Gothic UI Semibold"
           height: 40px
           padding-bottom: 20px
@@ -84,7 +140,7 @@ header
           display: inline-block
 
 footer
-  text-align: center
+  @extend %text-align-center
   background-color: #E40000
   color: #FFF
   font: 14px 'Montserrat', sans-serif
@@ -99,7 +155,7 @@ footer
 .joke
   h1
     width: 30vw
-    text-align: center
+    @extend %text-align-center
 
   .pretty-header
     font-size: 60px
@@ -108,13 +164,13 @@ footer
     margin: 50px 35vw
 
   .pretty-form
-    display: flex
-    flex-direction: column
+    @extend %d-flex
+    +flex-direction(column)
     width: 30vw
     margin: 50px 33vw
     padding: 2vw
     border: 2px solid #6B2020
-    border-radius: 2px
+    +border-radius(2px)
     background-color: #FAFAFA
 
     h2
@@ -125,8 +181,8 @@ footer
       font-size: 30px
 
     label
-      display: flex
-      flex-direction: row
+      @extend %d-flex
+      +flex-direction(row)
 
       span
         margin-right: 10px
@@ -137,10 +193,11 @@ footer
         font-weight: 500
 
       input
-        display: flex
-        flex: 1 1
+        @extend %d-flex
+        +flex(auto)
         height: 28px
-
+        width: 100px
+        
     button
       margin: 50px 30% 20px
       width: 40%
@@ -149,8 +206,8 @@ footer
       color: #FFF
       border-color: #6B2020
       border-style: groove
-      border-radius: 10px
-      font: 25px 'Montserrat', sans-serif
+      +border-radius(10px)
+      font: 22px 'Montserrat', sans-serif
 
       &:hover
         cursor: pointer
@@ -158,7 +215,7 @@ footer
   .pretty-image
     width: 30vw
     height: 30vw
-    object-fit: cover
+    +object-fit(cover)
     margin: 100px 35vw 10px
 
   .pretty-text
@@ -174,10 +231,11 @@ footer
       width: 80px
       height: 50px
       background-color: #E40000
-      transform: rotate(-45deg)
+      +transform(rotate(-45deg))
       bottom: 300px
       left: 101px
       border-radius: 0 25px 25px 0
+
 
     &:before
       content: ''
@@ -186,7 +244,7 @@ footer
       width: 80px
       height: 50px
       background-color: #E40000
-      transform: rotate(45deg)
+      +transform(rotate(45deg))
       bottom: 300px
       left: 80px
       border-radius: 25px 0 0 25px
@@ -197,8 +255,8 @@ footer
   .pretty-paragraph
     width: 24vw
     margin: 10px 38vw 100px
-    display: flex
-    justify-content: space-between
+    @extend %d-flex
+    +justify-content(space-between)
 
     button
       width: 40%
@@ -217,11 +275,10 @@ footer
     font: 25px 'Montserrat', sans-serif
     color: #6B2020
     padding-bottom: 100px
-    text-align: center
+    @extend %text-align-center
 
   & *
-    transition-duration: 1.5s
-    transition-timing-function: ease
+    +transition(1.5s, ease)
 
 
 
@@ -232,22 +289,137 @@ footer
   width: 250px
   margin-left: 50px
   position: fixed
+  display: none
 
   ul
     list-style: none
     border-left: 4px solid red
     padding-inline-start: 0
-    height: 100px
+    z-index: 101
+    position: relative
 
     li
-      padding: 10px 0 0 20px
+      padding-left: 20px
       font-family: 'Roboto', sans-serif
       font-size: 20px
-      border-left: 4px solid green
+
+      &:first-child
+        border-left: 4px solid green
+        position: absolute
+        left: -4px
+        height: 0
 
 
 .about_content
   margin-left: 300px
+  padding: 10px 200px 0 10px
+
+  & > section
+    min-height: 500px
+    border: 2px solid #6B2020
+    border-bottom: none
+
+    h1
+      margin-top: 20px
+      margin-bottom: 20px
+      @extend %text-align-center
+      color: #6B2020
+      font: 40px 'Roboto', sans-serif
+
+    &:nth-of-type(1) h1
+      margin-top: 20%
+      font-size: 50px
+
+    &:nth-of-type(3)
+      height: 2000px
+
+      h1
+        font: 40px 'Roboto', sans-serif
+        font-weight: 600
+        margin-top: 50px
+        margin-bottom: 20px
+
+      span
+        display: block
+        font: 30px 'Roboto', sans-serif
+        font-weight: 500
+        padding: 50px 40%
+        color: brown
 
 
 
+//slider styles
+
+.wrapper
+  @extend %d-flex
+  height: 500px
+  width: 400px
+  overflow: hidden
+  margin: 0 auto
+
+  .slider
+    @extend %d-flex
+
+    &.slow
+      +transition(1s, ease)
+
+    .slide
+      width: 400px
+      height: 500px
+      background: url("../icons/loading.gif") center no-repeat
+
+      img
+        width: 400px
+        height: 400px
+        +object-fit(cover)
+
+
+      span
+        font: 40px 'Roboto', sans-serif
+        background-color: #000
+        color: #FFF
+        display: block
+        width: 400px
+        @extend %text-align-center
+
+#previous
+  margin-left: calc(50% - 50px)
+  display: none
+  width: 50px
+
+#next
+  margin-left: calc(50% - 25px)
+
+#previous, #next
+  font-size: 50px
+  cursor: pointer
+  user-select: none
+  -ms-user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+
+
+  &:hover
+    color: #E40000
+
+.contacts
+  +flex-direction(column)
+  min-height: 90vh
+  padding-left: 30%
+  align-content: center
+  -webkit-align-content: center
+  display: none
+
+  a
+    font: 40px "Roboto", sans-serif
+    text-decoration: none
+    color: #6B2020
+    margin-top: 50px
+
+  img
+    width: 30px
+    height: 30px
+    display: inline
+
+
+@import adaptive
