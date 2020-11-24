@@ -7,7 +7,6 @@ let contentBlocks = $('.about_content .about_block');
 //used to correctly position nav elements on navLine
 
 function createNavLine() {
-    console.log("create")
     let contentHeight = $(document).height();
     for (let i = 0; i < 4; i++) {
         navLineElements.eq(i+1).height(contentBlocks.eq(i).height() / contentHeight * navLineHeight);
@@ -34,7 +33,9 @@ async function getUser() {
     let newSlide = $('<div>').addClass('slide');
     slider.append(newSlide);
 
-    let response = await fetch('https://randomuser.me/api/?inc=name,picture');
+    let response = await fetch('https://randomuser.me/api/?inc=name,picture&gender=male').catch((err) => {
+        console.log(err)
+    });
     let user = await response.json().catch((err) => console.log(err));
 
     if (response.ok) {
@@ -60,19 +61,17 @@ function checkBorders() {
 function moveSlider(direction) {
     checkBorders();
     if (direction) {
-        console.log(currPosition)
         currPosition -= 400;
         $('#previous').css("display", "inline");
         $('#next').css("margin-left", "0");
         slider.css('transform', "translateX(" + (currPosition) + "px");
-
     } else {
         currPosition += 400;
         slider.css('transform', "translateX(" + currPosition + "px");
     }
 }
 
-$window.on('scroll', scrollJoke);
+
 
 function scrollJoke() {
     let top = $window.scrollTop();

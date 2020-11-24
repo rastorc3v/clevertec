@@ -36,17 +36,17 @@
 <body>
     <header>
         <nav id="main-navigation">
-            <ul>
-                <li id="about">
+            <ul role="menu">
+                <li id="about" aria-controls="about-region" role="menuitem">
                     About me
                 </li>
-                <li id="joke">
+                <li id="joke" aria-controls="joke-region" role="menuitem">
                     Home
                 </li>
-                <li id="contacts">
+                <li id="contacts" aria-controls="contacts-region" role="menuitem">
                     Contacts
                 </li>
-                <li id="return">
+                <li id="return" role="menuitem">
                     <span>expand</span>
                     <img src="icons/right.svg" alt="right arrow in circle"/>
                 </li>
@@ -54,7 +54,7 @@
         </nav>
     </header>
     <main>
-        <section class="joke">
+        <section class="joke" role="region" id="joke-region" aria-live="polite">
             <h1>Эта хэдар</h1>
             <form>
                 <h2>Форма</h2>
@@ -64,15 +64,14 @@
                 </label>
                 <button onclick="sayHello();" type="button">Эта кнопка (можна нажаць)</button>
             </form>
-            <img src="media/steve-jobs.jpg" alt="Steve Jobs smile face" onclick="prettyImage();" id="steve-img"/>
+            <img src="media/steve-jobs.jpg" alt="Steve Jobs smile face" id="steve-img"/>
             <span>Эта <strong>Стив Джобс</strong> он мой кумир. </span>
             <p>Я прахадил курсы па праграмираванию на HTML</p>
-            <p>
-                Эй, сайт, что с тобой?? Съешь сникерс! <img onclick="magicFlow();" src="media/snikers.jpg" alt="snikers bar photo"/>
-                Нажмите, чтобы съесть.
+            <p onclick="magicFlow();">
+                <button type="button" role="button">Эй, сайт, что с тобой?? Съешь сникерс!<img src="media/snikers.jpg" alt="snikers bar photo"/>Нажмите, чтобы съесть.</button>
             </p>
         </section>
-        <section class="about">
+        <section class="about" role="region" id="about-region" aria-live="polite">
             <section class="about_nav">
                 <ul>
                     <li>
@@ -102,16 +101,16 @@
                     <div class="wrapper">
                         <div class="slider slow">
                             <div class="slide">
-                                <img src="media/steve-jobs.jpg">
-                                <span>123</span>
+                                <img src="media/me.jpg">
+                                <span>Me</span>
                             </div>
                             <div class="slide">
-                                <img src="media/steve-jobs.jpg">
-                                <span>Lolk</span>
+                                <img src="media/my_friends.png">
+                                <span>My friends</span>
                             </div>
                             <div class="slide">
-                                <img src="media/steve-jobs.jpg">
-                                <span>kek</span>
+                                <img src="media/my_gf.png">
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -120,7 +119,7 @@
                 </section>
                 <section class="about_block">
                     <h1>My skills</h1>
-                    <span>HTML5 - CCS - JS - jQuery - SASS - SCSS - NodeJS - REST - Python - Django - SQL - Networks</span>
+                    <span>HTML5 <br> CCS <br> JS <br> jQuery <br> SASS <br> SCSS <br> NodeJS <br> REST <br> Python <br> Django <br> SQL <br> Networks</span>
                 </section>
                 <section class="about_block">
                     <h1>Ha-Ha</h1>
@@ -128,7 +127,7 @@
                 </section>
             </section>
         </section>
-        <section class="contacts">
+        <section class="contacts" role="region" id="contacts-region" aria-live="polite">
             <a href="https://github.com/rastorc3v/clevertec" target="_blank">Проект на Github <img src="icons/github.png" /></a>
             <a href="https://t.me/rastorc3v" target="_blank">Телеграм <img src="icons/telegram.png" /></a>
             <a href="tel:+375445692422">Телефон <img src="icons/phone.png" /></a>

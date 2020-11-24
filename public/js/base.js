@@ -11,12 +11,12 @@ navButtons.click((event) => {
     setTimeout(() => returnButton.show(500), 500);
     header.toggleClass("slow-move");                                        //on
     $window.off("scroll", onScroll);
-    header.width(300);
+    header.toggleClass("small");
     pageHandler(event);
 });
 
 returnButton.click(() => {
-    header.width(100 + "%");
+    header.toggleClass("small");
     setTimeout(() => header.toggleClass("slow-move"), 1000); //on
     $window.on("scroll", onScroll);
     returnButton.hide(500);
@@ -43,8 +43,11 @@ function pageHandler(event) {
     clearWindow();
     currentPage = event.target.id;
     if (currentPage === "about")  {
+        $window.on('scroll', scrollJoke);
         $('.about_nav').slideUp();
         console.log("yeah")
+    } else {
+        $window.off('scroll', scrollJoke);
     }
     if (currentPage === "contacts") {
         $('.contacts').css("display", "flex")
@@ -61,9 +64,6 @@ function clearWindow() {
     $('main > section').hide(1000);
 }
 
-//TODO: Доступность
 //TODO: Оптимизация JS
 //TODO: Вариант с JS (не с jQuery)
-//TODO: Кроссбраузерность
 //TODO: Кроссплатформенность
-//TODO: Ещё что-то
