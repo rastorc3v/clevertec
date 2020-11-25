@@ -1,5 +1,4 @@
-// with jQuery
-
+//joke function. Easy for understanding (i hope)
 function sayHello() {
     if (jokeFormButton.height() === 54) {
         alert("Hello, Jordan");
@@ -7,11 +6,13 @@ function sayHello() {
     }
 }
 
+// add heart near the face of Steve and make him happy =)
 function funSteve() {
     $('.pretty-text').addClass("like");
     jokeImage.attr("src", "media/steve-jobs-fun.jpg")
 }
 
+// remove heart (if exist) and make Steve sad =(
 function sadSteve() {
     $('.pretty-text').removeClass("like");
     jokeImage.attr("src", "media/steve-jobs-sad.jpeg")
@@ -19,10 +20,12 @@ function sadSteve() {
 
 
 //
-// magicFlow
+// MAGIC FLOW
+//
+// all page changes thanks only one button (joke too)
 //
 
-
+// definition of all DOM objects on the joke page.
 let jokeHeader = $('.joke h1'),
     jokeForm = $('.joke form'),
     jokeFormHeader =$('.joke h2'),
@@ -34,6 +37,8 @@ let jokeHeader = $('.joke h1'),
     jokeParagraph = $('.joke p:first-of-type'),
     flowButton = $('.joke p:last-of-type');
 
+
+// every function `pretty{elementName}` make style of {elementName} cooler.
 
 function prettyHeader() {
         jokeHeader.text("Rastorc3v Web Page");
@@ -61,6 +66,7 @@ function prettyDescription() {
 
 }
 
+//run all pretty functions
 function magicFlow() {
     header.css("display", "flex");
     flowButton.text("Better?");
