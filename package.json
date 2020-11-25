@@ -1,0 +1,31 @@
+{
+  "name": "clevertec",
+  "version": "1.0.0",
+  "description": "simple template, css and js for pass course",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rastorc3v/clevertec.git"
+  },
+  "keywords": [
+    "clevertec",
+    "course"
+  ],
+  "author": "Uladzislau Rastarhuyeu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rastorc3v/clevertec/issues"
+  },
+  "homepage": "https://github.com/rastorc3v/clevertec#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

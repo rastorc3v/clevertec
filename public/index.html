@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Rastorc3v breathtaking web page</title>
+
+    <meta name="description" content="Simple web page" />
+    <meta name="keywords" content="rastorc3v, clevertec" />
+    <meta name="author" content="Uladzislau Rastarhuyeu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="Rastorc3v Web Page" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="//rastorc3v.com" />
+    <meta property="og:image" content="//rastorc3v.com/media/og_image.png" />
+    <meta property="og:site_name" content="Rastorc3v Web Page" />
+
+    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script defer src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script defer src="js/base.js"></script>
+    <script defer src="js/joke.js"></script>
+    <script defer src="js/about.js"></script>
+</head>
+<body>
+    <header>
+        <nav id="main-navigation">
+            <ul role="menu">
+                <li id="about" aria-controls="about-region" role="menuitem">
+                    About me
+                </li>
+                <li id="joke" aria-controls="joke-region" role="menuitem">
+                    Home
+                </li>
+                <li id="contacts" aria-controls="contacts-region" role="menuitem">
+                    Contacts
+                </li>
+                <li id="return" role="menuitem">
+                    <span>expand</span>
+                    <img src="icons/right.svg" alt="right arrow in circle"/>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="joke" role="region" id="joke-region" aria-live="polite">
+            <h1>Эта хэдар</h1>
+            <form>
+                <h2>Форма</h2>
+                <label for="smth">
+                    <span>Эта падсказка для ввода</span>
+                    <input id="smth" name="smth" type="text" placeholder="эта импут" autocomplete="off" />
+                </label>
+                <button onclick="sayHello();" type="button">Эта кнопка (можна нажаць)</button>
+            </form>
+            <img src="media/steve-jobs.jpg" alt="Steve Jobs smile face" id="steve-img"/>
+            <span>Эта <strong>Стив Джобс</strong> он мой кумир. </span>
+            <p>Я прахадил курсы па праграмираванию на HTML</p>
+            <p onclick="magicFlow();">
+                <button type="button" role="button">Эй, сайт, что с тобой?? Съешь сникерс!<img src="media/snikers.jpg" alt="snikers bar photo"/>Нажмите, чтобы съесть.</button>
+            </p>
+        </section>
+        <section class="about" role="region" id="about-region" aria-live="polite">
+            <section class="about_nav">
+                <ul>
+                    <li>
+                    </li>
+                    <li>
+                        My name
+                    </li>
+                    <li>
+                        My friends
+                    </li>
+                    <li>
+                        My skills
+                    </li>
+                    <li>
+                        My credit card's data
+                    </li>
+                </ul>
+            </section>
+            <section class="about_content">
+                <section class="about_block">
+                    <h1>
+                        Hi! My name's Vlad
+                    </h1>
+                </section>
+                <section class="about_block">
+                    <h1>My friends =)</h1>
+                    <div class="wrapper">
+                        <div class="slider slow">
+                            <div class="slide">
+                                <img src="media/me.jpg">
+                                <span>Me</span>
+                            </div>
+                            <div class="slide">
+                                <img src="media/my_friends.png">
+                                <span>My friends</span>
+                            </div>
+                            <div class="slide">
+                                <img src="media/my_gf.png">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <span id="previous" onclick="moveSlider()">&#8592;</span>
+                    <span id="next" onclick="moveSlider('next')">&#8594;</span>
+                </section>
+                <section class="about_block">
+                    <h1>My skills</h1>
+                    <span>HTML5 <br> CCS <br> JS <br> jQuery <br> SASS <br> SCSS <br> NodeJS <br> REST <br> Python <br> Django <br> SQL <br> Networks</span>
+                </section>
+                <section class="about_block">
+                    <h1>Ha-Ha</h1>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, perspiciatis, quia! A aliquam amet aperiam aspernatur aut blanditiis commodi deleniti distinctio dolorem dolorum eveniet id illum, incidunt laboriosam maxime minus natus nemo nobis non ratione reprehenderit repudiandae sed tenetur voluptates voluptatum? Adipisci at culpa delectus eum facere fuga fugit impedit in iure, molestias nobis officiis pariatur provident quia recusandae rem sequi, temporibus ullam! Aliquid autem delectus eaque eum fugit non quibusdam. Accusamus, corporis distinctio dolores eos error est fugiat illum nobis non officia perferendis, porro reiciendis repudiandae saepe sint veritatis, vitae? Aperiam atque error illo officiis, ratione sed unde? Incidunt, ipsum suscipit! Ad assumenda aut beatae et fugit modi possimus, repudiandae saepe veniam voluptas! Magni quas repellat suscipit. Ab accusantium adipisci asperiores autem cum delectus dicta dolor dolorem dolorum esse eveniet facere facilis fugit harum hic illo iste iure laudantium molestias nemo nisi nobis non perferendis perspiciatis placeat provident quas quisquam quod, repellat sed temporibus totam ullam ut vitae voluptas voluptatem voluptates. Accusamus accusantium at delectus, dignissimos, id illum impedit magnam maiores natus nulla pariatur porro quae quasi quisquam, reiciendis veniam voluptatem? Aliquid assumenda autem cumque officiis perferendis quas quasi quidem quis, sed veritatis! Fuga inventore ipsum, neque nulla odio quis. Culpa, dolorum nesciunt nobis placeat quae quibusdam quisquam repellat vel vero voluptate! Aliquid architecto aspernatur assumenda blanditiis dolor dolore dolorem, esse est ex expedita minima, perferendis quasi quidem ullam vero. Distinctio illo non placeat quia rerum? Aliquid commodi debitis ea, est iure necessitatibus officiis recusandae? Ab beatae cumque delectus deleniti et eveniet facere in inventore iusto labore laudantium libero magnam maxime nemo non pariatur perferendis praesentium quam quibusdam quidem ratione sed suscipit, tenetur vitae voluptates. Amet architecto blanditiis delectus dicta dolorum eaque, enim eos fugit id laborum nesciunt obcaecati pariatur sapiente vero voluptatem. Accusamus aliquid aspernatur dicta neque voluptate.
+                </section>
+            </section>
+        </section>
+        <section class="contacts" role="region" id="contacts-region" aria-live="polite">
+            <a href="https://github.com/rastorc3v/clevertec" target="_blank">Проект на Github <img src="icons/github.png"/></a>
+            <a href="https://t.me/rastorc3v" target="_blank">Телеграм <img src="icons/telegram.png" /></a>
+            <a href="tel:+375445692422">Телефон <img src="icons/phone.png" /></a>
+            <a href="mailto:pole.smith@bk.ru?subject=Course Pass Result">Уведомить меня о результатах <img src="icons/mail.png" /></a>
+        </section>
+    </main>
+    <footer>
+        The site was created with the support of a community of people with a good sense of humor.<br>Gomel, 2020
+    </footer>
+</body>
+</html>
